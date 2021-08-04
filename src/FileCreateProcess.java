@@ -10,14 +10,31 @@ public class FileCreateProcess {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        // создадим новый файл
-        System.out.println("Enter the name of the new file...");
+        System.out.println("Выберите опцию: 1 - create, 2 - open");
+        String answer = reader.readLine();
 
-        String fileName = reader.readLine();
+        switch (answer) {
+            case("1") : {
+                // создадим новый файл
+                System.out.println("Enter the name of the new file...");
 
-        creator.createNewFile(fileName);
+                String fileName = reader.readLine();
 
-        //creator.writeInFile(fileName);
+                creator.createNewFile(fileName);
+
+                break;
+            }
+            case("2"): {
+                System.out.println("Enter the name of the file...");
+
+                String fileName = reader.readLine();
+
+                creator.readFromFile(fileName);
+                break;
+            }
+        }
+
+
     }
 
 }

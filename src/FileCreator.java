@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class FileCreator {
 
@@ -41,7 +43,13 @@ public class FileCreator {
         }
     }
 
-    private void readFromFile(String name) {
+    public void readFromFile(String name) throws IOException {
+        if (!checkFileExistence(name)) {
+            System.out.println("File already exists");
+            return;
+        }
+
+        System.out.println(Files.readString(Path.of(name)));
 
     }
 
