@@ -1,60 +1,22 @@
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.File;
+import java.io.IOException;
 
-public class FileCreator {
+public class FileCreator implements CreatorInterface {
 
-    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private CheckerInterface checkable;
 
-    public void writeInFile(String name) {
-        String text;
-        int i = 0;
-        try(FileWriter writer = new FileWriter(name, false))
-        {
-            while (true) {
-                i++;
-                System.out.println("Enter " + i + " line");
-                text = reader.readLine();
-                if (text.equals("quit") || text.equals("")) {
-                    break;
-                }
-                writer.write(text);
-            }
-        }
-        catch(IOException ex){
-            System.out.println(ex.getMessage());
-        }
-
-        System.out.println("Save the file");
+    public FileCreator(CheckerInterface checkable) {
+        this.checkable = checkable;
     }
 
-    public void createNewFile(String name) throws IOException {
-        try {
-            if (!checkFileExistence(name)) {
-                File f = new File(name);
-                if (f.createNewFile()) System.out.println("File is created");
-            }
-            else {
-                System.out.println("File already exists. Try again...");
-            }
-        }
-        catch (Exception e) {
-            System.err.println(e);
-        }
-    }
+    @Override
+    public boolean create(String name) throws IOException {
 
-    public void readFromFile(String name) throws IOException {
-        if (!checkFileExistence(name)) {
-            System.out.println("File already exists");
-            return;
+        if (checkable.exists(name)) {
+            return false;
         }
 
-        System.out.println(Files.readString(Path.of(name)));
-
-    }
-
-    private boolean checkFileExistence(String name) {
         File f = new File(name);
-        return f.exists();
+        return f.createNewFile();
     }
 }
