@@ -1,6 +1,8 @@
+import interfaces.*;
+
 import java.io.IOException;
 
-public class ReadingProcessor implements ProcessorInterface{
+public class ReadingProcessor implements ProcessorInterface {
 
     OutputInterface output;
     InputInterface input;
@@ -28,5 +30,10 @@ public class ReadingProcessor implements ProcessorInterface{
         String content = reader.read(fileName);
 
         output.println(content);
+    }
+
+    @Override
+    public String getName() {
+        return "Read";
     }
 }

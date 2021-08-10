@@ -1,3 +1,5 @@
+import interfaces.CheckerInterface;
+
 import java.io.File;
 
 public class FileChecker implements CheckerInterface {

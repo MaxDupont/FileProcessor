@@ -1,18 +1,21 @@
+import interfaces.CheckerInterface;
+import interfaces.CreatorInterface;
+
 import java.io.File;
 import java.io.IOException;
 
 public class FileCreator implements CreatorInterface {
 
-    private CheckerInterface checkable;
+    private CheckerInterface checker;
 
     public FileCreator(CheckerInterface checkable) {
-        this.checkable = checkable;
+        this.checker = checkable;
     }
 
     @Override
     public boolean create(String name) throws IOException {
 
-        if (checkable.exists(name)) {
+        if (checker.exists(name)) {
             return false;
         }
 

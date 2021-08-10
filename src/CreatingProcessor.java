@@ -1,3 +1,8 @@
+import interfaces.CreatorInterface;
+import interfaces.InputInterface;
+import interfaces.OutputInterface;
+import interfaces.ProcessorInterface;
+
 import java.io.IOException;
 
 public class CreatingProcessor implements ProcessorInterface {
@@ -24,5 +29,10 @@ public class CreatingProcessor implements ProcessorInterface {
         if (!creator.create(fileName)) {
             output.println("File is not created");
         }
+    }
+
+    @Override
+    public String getName() {
+        return "Create";
     }
 }
