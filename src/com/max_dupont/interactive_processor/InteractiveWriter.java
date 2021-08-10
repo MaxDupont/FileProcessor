@@ -1,19 +1,20 @@
-import interfaces.CheckerInterface;
-import interfaces.InputInterface;
-import interfaces.OutputInterface;
-import interfaces.ProcessorInterface;
+package com.max_dupont.interactive_processor;
+
+import com.max_dupont.existence_ensurance.ExistenceEnsuranceInterface;
+import com.max_dupont.IO.InputInterface;
+import com.max_dupont.IO.OutputInterface;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class WritingProcessor implements ProcessorInterface {
+public class InteractiveWriter implements InteractiveProcessorInterface {
 
     OutputInterface output;
     InputInterface input;
-    CheckerInterface checker;
+    ExistenceEnsuranceInterface checker;
 
-    public WritingProcessor(OutputInterface output, InputInterface input, CheckerInterface checker) {
+    public InteractiveWriter(OutputInterface output, InputInterface input, ExistenceEnsuranceInterface checker) {
         this.output = output;
         this.input = input;
         this.checker = checker;

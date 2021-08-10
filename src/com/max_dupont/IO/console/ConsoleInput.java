@@ -1,4 +1,6 @@
-import interfaces.InputInterface;
+package com.max_dupont.IO.console;
+
+import com.max_dupont.IO.InputInterface;
 
 import java.io.BufferedReader;
 import java.io.IOException;

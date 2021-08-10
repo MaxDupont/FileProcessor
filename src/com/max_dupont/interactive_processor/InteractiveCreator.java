@@ -1,18 +1,19 @@
-import interfaces.CreatorInterface;
-import interfaces.InputInterface;
-import interfaces.OutputInterface;
-import interfaces.ProcessorInterface;
+package com.max_dupont.interactive_processor;
+
+import com.max_dupont.crud.CreatorInterface;
+import com.max_dupont.IO.InputInterface;
+import com.max_dupont.IO.OutputInterface;
 
 import java.io.IOException;
 
-public class CreatingProcessor implements ProcessorInterface {
+public class InteractiveCreator implements InteractiveProcessorInterface {
 
 
     private OutputInterface output;
     private InputInterface input;
     private CreatorInterface creator;
 
-    public CreatingProcessor(OutputInterface output, InputInterface input, CreatorInterface creator) {
+    public InteractiveCreator(OutputInterface output, InputInterface input, CreatorInterface creator) {
         this.output = output;
         this.input = input;
         this.creator = creator;

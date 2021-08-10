@@ -1,15 +1,15 @@
-import interfaces.CheckerInterface;
-import interfaces.DeleterInterface;
-import interfaces.InputInterface;
-import interfaces.OutputInterface;
+package com.max_dupont.file_system;
+
+import com.max_dupont.existence_ensurance.ExistenceEnsuranceInterface;
+import com.max_dupont.crud.DeleterInterface;
 
 import java.io.File;
 
 public class FileDeleter implements DeleterInterface {
 
-    private CheckerInterface checker;
+    private ExistenceEnsuranceInterface checker;
 
-    public FileDeleter(CheckerInterface checker) {
+    public FileDeleter(ExistenceEnsuranceInterface checker) {
         this.checker = checker;
     }
 
@@ -21,6 +21,6 @@ public class FileDeleter implements DeleterInterface {
         }
 
         File file = new File(name);
-         return file.delete();
+        return file.delete();
     }
 }

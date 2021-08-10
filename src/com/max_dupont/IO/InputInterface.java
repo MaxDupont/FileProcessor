@@ -1,4 +1,4 @@
-package interfaces;
+package com.max_dupont.IO;
 
 import java.io.IOException;
 

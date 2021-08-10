@@ -1,18 +1,18 @@
-import interfaces.DeleterInterface;
-import interfaces.InputInterface;
-import interfaces.OutputInterface;
-import interfaces.ProcessorInterface;
+package com.max_dupont.interactive_processor;
 
-import java.io.File;
+import com.max_dupont.crud.DeleterInterface;
+import com.max_dupont.IO.InputInterface;
+import com.max_dupont.IO.OutputInterface;
+
 import java.io.IOException;
 
-public class DeletingProcessor implements ProcessorInterface {
+public class InteractiveDeleter implements InteractiveProcessorInterface {
 
     OutputInterface output;
     InputInterface input;
     DeleterInterface deleter;
 
-    public DeletingProcessor(OutputInterface output, InputInterface input, DeleterInterface deleter) {
+    public InteractiveDeleter(OutputInterface output, InputInterface input, DeleterInterface deleter) {
         this.output = output;
         this.input = input;
         this.deleter = deleter;

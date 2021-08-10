@@ -1,4 +1,6 @@
-import interfaces.OutputInterface;
+package com.max_dupont.IO.console;
+
+import com.max_dupont.IO.OutputInterface;
 
 public class ConsoleOutput implements OutputInterface {
     @Override

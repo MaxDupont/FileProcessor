@@ -1,15 +1,20 @@
-import interfaces.*;
+package com.max_dupont.interactive_processor;
+
+import com.max_dupont.IO.InputInterface;
+import com.max_dupont.IO.OutputInterface;
+import com.max_dupont.crud.ReaderInterface;
+import com.max_dupont.existence_ensurance.ExistenceEnsuranceInterface;
 
 import java.io.IOException;
 
-public class ReadingProcessor implements ProcessorInterface {
+public class InteractiveReader implements InteractiveProcessorInterface {
 
     OutputInterface output;
     InputInterface input;
     ReaderInterface reader;
-    CheckerInterface checker;
+    ExistenceEnsuranceInterface checker;
 
-    public ReadingProcessor(OutputInterface output, InputInterface input, ReaderInterface reader, CheckerInterface checker) {
+    public InteractiveReader(OutputInterface output, InputInterface input, ReaderInterface reader, ExistenceEnsuranceInterface checker) {
         this.output = output;
         this.input = input;
         this.reader = reader;

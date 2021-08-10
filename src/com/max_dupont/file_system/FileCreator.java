@@ -1,14 +1,16 @@
-import interfaces.CheckerInterface;
-import interfaces.CreatorInterface;
+package com.max_dupont.file_system;
+
+import com.max_dupont.existence_ensurance.ExistenceEnsuranceInterface;
+import com.max_dupont.crud.CreatorInterface;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileCreator implements CreatorInterface {
 
-    private CheckerInterface checker;
+    private ExistenceEnsuranceInterface checker;
 
-    public FileCreator(CheckerInterface checkable) {
+    public FileCreator(ExistenceEnsuranceInterface checkable) {
         this.checker = checkable;
     }
 
