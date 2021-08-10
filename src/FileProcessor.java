@@ -28,7 +28,7 @@ class FileProcessor {
         Map<String, ProcessorInterface> caseMap = new HashMap<>();
         caseMap.put("1",  new CreatingProcessor(output, input, creator));
         caseMap.put("2",  new ReadingProcessor(output, input, reader, checker));
-        //caseMap.put("3",  new WritingProcessor(output, input, checker));
+        caseMap.put("3",  new WritingProcessor(output, input, checker));
         caseMap.put("4", new DeletingProcessor(output, input, deleter));
 
         for(Map.Entry<String, ProcessorInterface> entry : caseMap.entrySet()) {
